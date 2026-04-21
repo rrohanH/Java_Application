@@ -1,0 +1,271 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.calculator-wrapper {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+h3 {
+    color: #555;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Display */
+.display {
+    background: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.display-input {
+    width: 100%;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    color: #333;
+    margin-bottom: 8px;
+    cursor: default;
+    transition: border-color 0.3s ease;
+}
+
+.display-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.expression-display {
+    display: block;
+    text-align: right;
+    color: #999;
+    font-size: 12px;
+    height: 16px;
+}
+
+/* Calculator Grid */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-number {
+    background: #f0f0f0;
+    color: #333;
+    border: 2px solid #ddd;
+}
+
+.btn-number:hover {
+    background: #e0e0e0;
+    border-color: #999;
+}
+
+.btn-operator {
+    background: #667eea;
+    color: white;
+    border: 2px solid #667eea;
+}
+
+.btn-operator:hover {
+    background: #5568d3;
+}
+
+.btn-equals {
+    background: #48bb78;
+    color: white;
+    border: 2px solid #48bb78;
+    font-size: 20px;
+}
+
+.btn-equals:hover {
+    background: #38a169;
+}
+
+.btn-clear {
+    background: #f56565;
+    color: white;
+    border: 2px solid #f56565;
+}
+
+.btn-clear:hover {
+    background: #e53e3e;
+}
+
+/* Advanced Operations */
+.advanced-operations {
+    margin-bottom: 20px;
+}
+
+.advanced-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.btn-advanced {
+    background: #ed8936;
+    color: white;
+    border: 2px solid #ed8936;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.btn-advanced:hover {
+    background: #dd6b20;
+}
+
+/* History Section */
+.history-section {
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+}
+
+.history-list {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    min-height: 30px;
+}
+
+.history-item {
+    background: white;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #555;
+    border-left: 3px solid #667eea;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    word-break: break-all;
+}
+
+.history-item:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.history-empty {
+    color: #999;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .calculator-wrapper {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .display-input {
+        font-size: 20px;
+        padding: 12px;
+    }
+}
+
+/* Scrollbar Styling */
+.history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: #5568d3;
+}
